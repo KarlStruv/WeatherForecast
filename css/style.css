@@ -1,0 +1,26 @@
+*{
+    background: url("background_image.jpg");
+    text-align: center;
+}
+.day{
+    border: solid 1px black;
+    width: 15%;
+    height: 150px;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+}
+
+.hour{
+    border: solid 1px black;
+    width: 13%;
+    height: 120px;
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+}
+
+form{
+    display: inline-block;
+    margin: 20px;
+}
