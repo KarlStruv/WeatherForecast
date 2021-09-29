@@ -11,6 +11,7 @@ class WeatherHourly
     {
         $this->hourData = $hourData;
         $this->currentHour = $currentHour;
+
     }
 
     public function getCurrentHour(): int
@@ -18,10 +19,10 @@ class WeatherHourly
         return $this->currentHour;
     }
 
-    public function getHourData(int $hour): array
+    public function getHourData(int $hours): array
     {
-        $temp = $this->hourData[$this->currentHour + $hour]['temp_c'];
-        $condition = $this->hourData[$this->currentHour + $hour]['condition']['text'];
+        $temp = $this->hourData[$this->currentHour + $hours]['temp_c'];
+        $condition = $this->hourData[$this->currentHour + $hours]['condition']['text'];
         return [$temp, $condition];
     }
 

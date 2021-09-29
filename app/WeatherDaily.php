@@ -30,4 +30,5 @@ class WeatherDaily
         return $this->condition;
     }
 
+
 }

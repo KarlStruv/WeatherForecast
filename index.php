@@ -37,6 +37,7 @@ $day2 = new WeatherDaily(
 
 $currentHour = substr(Carbon::now("Europe/Tallinn")->toDateTimeString(), 11, 2);
 
+
 $weatherHourly = new WeatherHourly(
     $weatherData['forecast']['forecastday'][0]['hour'], $currentHour
 );
@@ -55,7 +56,7 @@ $weatherHourly = new WeatherHourly(
 </head>
 <body>
 <div>
-    <h1><?php echo $currentCity?></h1>
+    <h1><?php echo $currentCity ?></h1>
 </div>
 
 <div class="followingDaysForecast">
@@ -84,19 +85,14 @@ $weatherHourly = new WeatherHourly(
 <h2>Today</h2>
 
 <div class="todayForecast">
-    <div class="hour">
-        <p><?php echo $weatherHourly->getCurrentHour() ?>:00</p>
-        <p>Temp <?php echo $weatherHourly->getHourData(0)[0] ?>°C</p>
-        <p>Condition: <?php echo $weatherHourly->getHourData(0)[1] ?></p>
-    </div>
-    <?php
-        for ($i = 0; $i > 6; $i++){ ?>
-            <div class="hour">
-                <p><?php echo $weatherHourly->getCurrentHour() + $i ?>:00</p>
-                <p>Temp <?php echo $weatherHourly->getHourData($i)[0] ?>°C</p>
-                <p>Condition: <?php echo $weatherHourly->getHourData($i)[1] ?></p>
-            </div>
-      <?php }?>
+
+    <?php for ($i = 0; $i < 7; $i++) { ?>
+        <div class="hour">
+            <p><?php echo $weatherHourly->getCurrentHour() + $i; ?>:00</p>
+            <p>Temp <?php echo $weatherHourly->getHourData($i)[0]; ?>°C</p>
+            <p>Condition: <?php echo $weatherHourly->getHourData($i)[1]; ?></p>
+        </div>
+    <?php } ?>
 </div>
 
 <form method="get">
