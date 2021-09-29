@@ -22,5 +22,6 @@
 
 form{
     display: inline-block;
-    margin: 20px;
+    margin: 25px;
+    background: transparent;
 }
