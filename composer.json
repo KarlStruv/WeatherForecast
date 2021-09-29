@@ -1,6 +1,7 @@
 {
   "require": {
-    "nesbot/carbon": "^2.53"
+    "nesbot/carbon": "^2.53",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
